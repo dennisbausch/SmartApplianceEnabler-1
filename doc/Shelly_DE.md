@@ -1,4 +1,6 @@
 # Shelly Plug (S)
+Gen1 API 
+https://shelly-api-docs.shelly.cloud/gen1/
 
 Mit dem [Shelly plug](https://shelly.cloud/shelly-plug/) oder dem [Shelly Plug S](https://shelly.cloud/knowledge-base/devices/shelly-plug-s/), der mit dem WLAN verbunden ist, lässt sich ein Gerät schalten auch dessen aktueller Stromverbrauch messen.
 
@@ -22,7 +24,33 @@ Für die Verwendung als Schalter sind folgende Einstellungen notwendig (IP-Adres
 | Aktion "Einschalten"  | http://192.168.1.xxx/relay/0?turn=on   |
 | Aktion "Ausschalten"  | http://192.168.1.xxx/relay/0?turn=off  |
 
+
+# Shelly 1PM 
+Gen1 API 
+https://shelly-api-docs.shelly.cloud/gen1/
+
+## Verwendung als Stromzähler
+
+Für die Verwendung als Stromzähler sind folgende Einstellungen notwendig (IP-Adresse bzw. Hostname ist anzupassen):
+
+| Feld                                           | Wert                       |
+|------------------------------------------------|----------------------------|
+| URL                                            | http://192.168.1.1/Status  |
+| Regex for Extraktion (bei Parameter `Leistung`) |.*[^over]power.:(\d+).*     |
+
+## Verwendung als Schalter
+
+Für die Verwendung als Schalter sind folgende Einstellungen notwendig (IP-Adresse bzw. Hostname ist anzupassen):
+
+
+| Feld                  | Wert                                   |
+|-----------------------|----------------------------------------|
+| Aktion "Einschalten"  | http://192.168.1.xxx/relay/0?turn=on   |
+| Aktion "Ausschalten"  | http://192.168.1.xxx/relay/0?turn=off  |
+
 # Shelly 3EM
+Gen1 API 
+https://shelly-api-docs.shelly.cloud/gen1/
 
 ## Verwendung als Stromzähler
 
@@ -35,8 +63,32 @@ Für die Verwendung als Stromzähler sind folgende Einstellungen notwendig (IP-A
 | Pfad für Extraktion (bei Parameter `Leistung`) | $.total_power             |
 
 # Shelly 4PM
-
 Mit dem [Shelly 4 Pro](https://shelly.cloud/shelly-4-pro/), der mit dem WLAN verbunden ist, lassen sich 4 Geräte schalten auch deren aktueller Stromverbrauch messen.
+Gen1 API 
+https://shelly-api-docs.shelly.cloud/gen1/
+
+## Verwendung als Stromzähler
+
+Für die Verwendung als Stromzähler sind folgende Einstellungen notwendig (# ist durch die die Nummer des Kanals [0,1,2,3] zu ersetzen; IP-Adresse bzw. Hostname ist anzupassen):
+
+| Feld                                           | Wert                                         |
+|------------------------------------------------|----------------------------------------------|
+| Format                                         | JSON                                         |
+| URL                                            | http://192.168.1.1/rpc/Switch.GetStatus?id=# |
+| Pfad für Extraktion (bei Parameter `Leistung`) | $.apower                                     |
+
+## Verwendung als Schalter
+
+Für die Verwendung als Schalter sind folgende Einstellungen notwendig (# ist durch die die Nummer des Kanals [0,1,2,3] zu ersetzen;IP-Adresse bzw. Hostname ist anzupassen):
+
+| Feld                                            | Wert                               |
+| ----------------------------------------------- |------------------------------------|
+| Format                                          | JSON                               |
+| URL                                             | http://192.168.1.1/relay/#?turn=on |
+
+# Shelly Plus/Pro
+Gen2 API 
+https://shelly-api-docs.shelly.cloud/gen2/
 
 ## Verwendung als Stromzähler
 
