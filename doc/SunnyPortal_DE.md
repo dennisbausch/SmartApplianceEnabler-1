@@ -42,6 +42,8 @@ Um die Geräte auf einmal anzulegen, muss man in der `Übersicht Neugeräte`, al
 Quelle: https://www.photovoltaikforum.com/thread/104060-ger%C3%A4te-mit-home-manager-koppeln-via-semp-ethernet/?postID=1774797#post1774797
 
 ![Mehr als 12 Geräte](../pics/shm/MehrAls12Geraete.png)
+  
+Im Sunnyportal lassen sie die noch nicht genutzten Verbraucher (Reserviert...)  ausblenden in dem  unter Konfiguration auf bearbeiten klickt und dann den Hacken bei Aktiv rausnimmt.  Der Verbraucher ist dann ausgeblendet kann aber jederzeit wieder aktiviert werden.  
 
 ## Vebraucherbilanz
 
